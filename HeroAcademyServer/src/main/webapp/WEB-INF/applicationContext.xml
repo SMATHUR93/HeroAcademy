@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd 
+	http://www.springframework.org/schema/context 
+	http://www.springframework.org/schema/context/spring-context.xsd 
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx.xsd 
+	http://www.springframework.org/schema/mvc 
+	http://www.springframework.org/schema/mvc/spring-mvc.xsd  
+	http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop.xsd"
+
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans">
+	<context:component-scan base-package="com.shrek.heroAcademy.*" />
+	<mvc:annotation-driven />
+	<context:annotation-config />
+	
+	<!-- properties file path descriptor -->
+	<bean id="jdbcPropertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
+		p:location="classpath:project.properties" />
+
+	<!-- Data source bean initialization information from properties file -->
+	<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+		id="DataSource">
+		<property value="${jdbc.driverClassName}" name="driverClassName" />
+		<property value="${jdbc.url}" name="url" />
+		<property value="${jdbc.username}" name="username" />
+		<property value="${jdbc.password}" name="password" />
+	</bean>
+
+	<!-- Entity Manager Factory -->
+	<bean id="entityManagerFactory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="DataSource" />
+		<property name="persistenceUnitName" value="heroAcademyPU"></property>
+	</bean>
+	
+	<mvc:resources location="/" mapping="/**" />
+
+	<!-- Transaction Manager -->
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+
+	<!-- Detect @Transactional -->
+	<tx:annotation-driven transaction-manager="transactionManager"
+		proxy-target-class="true" />
+		
+	<!-- setting maximum upload size -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="1000000000" />  <!-- It is in Bytes -->
+	</bean>
+</beans>

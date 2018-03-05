@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd 
+	http://www.springframework.org/schema/context 
+	http://www.springframework.org/schema/context/spring-context.xsd 
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx.xsd 
+	http://www.springframework.org/schema/mvc 
+	http://www.springframework.org/schema/mvc/spring-mvc.xsd  
+	http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop.xsd"
+
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans">	
+
+	<!-- auto wired data -->
+	<!-- WITH PERSISTENCE OBJECT -->
+	<bean id="allInformationService" class="com.shrek.heroAcademy.service.AllInformationServiceImpl" />
+	<bean id="elementDao" class="com.shrek.heroAcademy.dao.ElementDaoImpl" />
+	<bean id="raceDao" class="com.shrek.heroAcademy.dao.ElementDaoImpl" />
+	<bean id="symbolDao" class="com.shrek.heroAcademy.dao.ElementDaoImpl" />
+	<bean id="skillDao" class="com.shrek.heroAcademy.dao.ElementDaoImpl" />
+	
+</beans>
