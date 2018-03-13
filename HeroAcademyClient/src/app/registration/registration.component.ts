@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-registration',
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.css'],
-  encapsulation: ViewEncapsulation.None
+  //encapsulation: ViewEncapsulation.None
 })
 export class RegistrationComponent implements OnInit {
 

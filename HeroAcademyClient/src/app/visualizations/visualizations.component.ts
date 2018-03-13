@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-visualizations',
   templateUrl: './visualizations.component.html',
   styleUrls: ['./visualizations.component.css'],
-  encapsulation: ViewEncapsulation.None
+  //encapsulation: ViewEncapsulation.None
 })
 export class VisualizationsComponent implements OnInit {
 

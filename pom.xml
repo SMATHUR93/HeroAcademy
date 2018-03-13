@@ -10,7 +10,7 @@
 	<packaging>pom</packaging>
 	
     <modules>
-        <!-- <module>HeroAcademyClient</module> -->
+        <module>HeroAcademyClient</module>
         <module>HeroAcademyServer</module>
     </modules>
 	<properties>
