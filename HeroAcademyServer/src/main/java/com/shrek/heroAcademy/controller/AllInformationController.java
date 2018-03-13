@@ -10,13 +10,13 @@ import com.shrek.heroAcademy.to.AllInformationTO;
 import com.shrek.heroAcademy.service.AllInformationServiceImpl;
 
 @RestController
-@RequestMapping("/allInformation")
+@RequestMapping("/academy")
 public class AllInformationController {
 
   @Autowired
   AllInformationServiceImpl allInformationService;
 
-  @RequestMapping(method = RequestMethod.GET)
+  @RequestMapping(value = "/allInformation", method = RequestMethod.GET)
   public AllInformationTO getEmployee() {
     return allInformationService.getAllInformation();
   }

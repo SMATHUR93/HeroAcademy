@@ -13,7 +13,7 @@ public class ElementDaoImpl extends GenericDaoImpl<Element> implements IElementD
 		return (List<Element>) findAll();
 	}
 
-	public Element getElement(String id){
+	public Element getElement(Long id){
 		return (Element) find(id);
 	}
 	

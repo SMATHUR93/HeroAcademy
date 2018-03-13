@@ -41,6 +41,36 @@ public class User extends BaseEntity implements Serializable{
 	@Column(name = "SECONDARY_EMAIL", nullable = true)
 	private String secondaryEmail;
 	
+	@Column(name = "HEIGHT", nullable = true)
+	private Integer height;
+	
+	@Column(name = "WEIGHT", nullable = true)
+	private Integer weight;
+	
+	@Column(name = "STRENGTH", nullable = true)
+	private Integer strength;
+	
+	@Column(name = "SPEED", nullable = true)
+	private Integer speed;
+	
+	@Column(name = "INTELLIGENCE", nullable = true)
+	private Integer intelligence;
+	
+	@Column(name = "STAMINA", nullable = true)
+	private Integer stamina;
+	
+	@Column(name = "WILLPOWER", nullable = true)
+	private Integer willpower;
+	
+	@Column(name = "FORTITIUDE", nullable = true)
+	private Integer fortitude;
+	
+	@Column(name = "DURABILLITY", nullable = true)
+	private Integer durabillity;
+	
+	@Column(name = "COORDINATION", nullable = true)
+	private Integer coordination;
+	
 	@OneToOne 
 	@JoinTable(name="EQUIPMENT_MAPPING")
 	private Equipment equipment;
