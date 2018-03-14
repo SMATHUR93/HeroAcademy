@@ -2,11 +2,14 @@ import { NgModule }       from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 
 import { AppRoutingModule }     from './app-routing.module';
+
+// import { AppBootstrapModule } from './app-bootstrap.module';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -15,6 +18,8 @@ import { RegistrationComponent } from './registration/registration.component';
 import { ProfileComponent } from './profile/profile.component';
 import { VisualizationsComponent } from './visualizations/visualizations.component';
 import { AppsComponent } from './apps/apps.component';
+import { WelcomeScreenComponent } from './welcome-screen/welcome-screen.component';
+
 
 @NgModule({
   imports: [
@@ -22,6 +27,9 @@ import { AppsComponent } from './apps/apps.component';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
+
+    CommonModule,
+    // AppBootstrapModule,
 
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
@@ -37,7 +45,8 @@ import { AppsComponent } from './apps/apps.component';
     RegistrationComponent,
     ProfileComponent,
     VisualizationsComponent,
-    AppsComponent
+    AppsComponent,
+    WelcomeScreenComponent
   ],
   //providers: [ HeroService ],
   bootstrap: [AppComponent]
