@@ -77,63 +77,11 @@
   </nav>
 </header>
 
-
-<!-- <header>
-  <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand">
-          <img  class="mb-4 logo" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-        </a>
-        <span class="navbar-brand">{{title}}</span>
-      </div>
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
-        <li dropdown class="dropdown">
-          <a dropdownToggle  role="button">Page 1 <span class="caret"></span></a>
-          <ul *dropdownMenu class="dropdown-menu">
-            <li><a href="#">Page 1-1</a></li>
-            <li><a href="#">Page 1-2</a></li>
-            <li><a href="#">Page 1-3</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Page 2</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
-    </div>
-  </nav>
-</header> -->
-
-
 <!-- Begin page content -->
-<main role="main" class="container">
-  <!-- <div class="container">
-    <button type="button" class="btn btn-primary" tooltip="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."> Button with tooltip </button>
-
-    <button type="button" class="btn btn-info" 
-    (click)="openModal(template)">Create template modal</button>
-
-    <ng-template #template>
-      <div class="modal-header">
-        <h4 class="modal-title pull-left">Modal</h4>
-        <button type="button" class="close pull-right" 
-        aria-label="Close" (click)="modalRef.hide()">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="modal-body">
-      This is a modal.
-    </div>
-  </ng-template>
-</div> -->
+<article> 
 <router-outlet class="text-center"></router-outlet>
-</main>
+</article>
 
 <footer class="footer">
-  <div class="container">
     <span class="text-muted">Place sticky footer content here.</span>
-  </div>
 </footer>
