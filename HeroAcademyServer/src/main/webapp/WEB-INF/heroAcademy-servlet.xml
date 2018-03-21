@@ -19,9 +19,11 @@
 	<!-- auto wired data -->
 	<!-- WITH PERSISTENCE OBJECT -->
 	<bean id="allInformationService" class="com.shrek.heroAcademy.service.AllInformationServiceImpl" />
+	<bean id="authenticationService" class="com.shrek.heroAcademy.service.AuthenticationServiceImpl" />
 	<bean id="elementDao" class="com.shrek.heroAcademy.dao.ElementDaoImpl" />
 	<bean id="raceDao" class="com.shrek.heroAcademy.dao.RaceDaoImpl" />
 	<bean id="symbolDao" class="com.shrek.heroAcademy.dao.SymbolDaoImpl" />
 	<bean id="skillDao" class="com.shrek.heroAcademy.dao.SkillDaoImpl" />
+	<bean id="userDao" class="com.shrek.heroAcademy.dao.UserDaoImpl" />
 	
 </beans>

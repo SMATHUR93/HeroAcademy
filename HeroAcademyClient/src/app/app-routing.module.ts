@@ -8,7 +8,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 const routes: Routes = [
   { path: '', redirectTo: '/welcome', pathMatch: 'full' },
   { path: 'dashboard',  component: DashboardComponent },
-  { path: 'welcome',     component: WelcomeScreenComponent }
+  { path: 'welcome',     component: WelcomeScreenComponent },
+  // otherwise redirect to home
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({
