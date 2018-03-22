@@ -100,11 +100,19 @@ public abstract class GenericDaoImpl<T> implements IGenericDao<T> {
     
     StringBuffer appendWhereClause(Map<String, Object> parameters, StringBuffer queryString){
     	Set<String> rawParameters = parameters.keySet();
+    	int counter = 0;
     	for (String entry : rawParameters) {
-    		queryString.append(" WHERE e."+entry+" = '");
-    		queryString.append(parameters.get(entry));
-    		queryString.append("'");
-    	}    	
+    		if(counter==0){
+    			queryString.append(" WHERE e."+entry+" = '");
+    			queryString.append(parameters.get(entry));
+    			queryString.append("'");
+    		} else{
+    			queryString.append(" AND e."+entry+" = '");
+    			queryString.append(parameters.get(entry));
+    			queryString.append("'");
+    		}
+    		counter++;
+    	}
     	return queryString;
     }  
 

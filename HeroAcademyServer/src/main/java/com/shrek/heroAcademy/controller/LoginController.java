@@ -1,6 +1,7 @@
 package com.shrek.heroAcademy.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -18,7 +19,7 @@ public class LoginController {
 	AuthenticationServiceImpl authenticationService;
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public @ResponseBody BasicRestResponse login(LoginTO loginTO) {
+	public @ResponseBody BasicRestResponse login(@RequestBody LoginTO loginTO) {
 		BasicRestResponse restResponse;
 		if(authenticationService.authenticate(loginTO)){
 			restResponse = new BasicRestResponse("Login Successful", true);
