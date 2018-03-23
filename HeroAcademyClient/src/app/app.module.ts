@@ -19,7 +19,10 @@ import { ProfileComponent } from './profile/profile.component';
 import { VisualizationsComponent } from './visualizations/visualizations.component';
 import { AppsComponent } from './apps/apps.component';
 import { WelcomeScreenComponent } from './welcome-screen/welcome-screen.component';
+import { MessagesComponent } from './messages/messages.component';
 
+import { LoginService }          from './_services/login.service';
+import { MessageService }       from './_services/message.service';
 
 @NgModule({
   imports: [
@@ -34,9 +37,9 @@ import { WelcomeScreenComponent } from './welcome-screen/welcome-screen.componen
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
-    HttpClientInMemoryWebApiModule.forRoot(
+    /*HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
-    )
+    )*/
   ],
   declarations: [
     AppComponent,
@@ -46,9 +49,10 @@ import { WelcomeScreenComponent } from './welcome-screen/welcome-screen.componen
     ProfileComponent,
     VisualizationsComponent,
     AppsComponent,
-    WelcomeScreenComponent
+    WelcomeScreenComponent,
+    MessagesComponent
   ],
-  //providers: [ HeroService ],
+  providers: [ LoginService, MessageService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

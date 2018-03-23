@@ -23,7 +23,7 @@
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="#">WebSiteName</a>
+        <a class="navbar-brand" href="#">Hero Academy</a>
       </div>
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home</a></li>
@@ -47,32 +47,7 @@
           </div>
         </div>
       </form>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-            <span class="glyphicon glyphicon-log-in"></span>
-            Login
-            <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu">
-            <form class="form-inline" action="/action_page.php">
-              <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-              </div>
-              <div class="form-group">
-                <label for="pwd">Password:</label>
-                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
-              </div>
-              <div class="checkbox">
-                <label><input type="checkbox" name="remember"> Remember me</label>
-              </div>
-              <button type="submit" class="btn btn-default">Submit</button>
-            </form>            
-          </ul>
-        </li>
-      </ul>
+      <app-login *ngIf="!isLoggedIn"></app-login>
     </div>
   </nav>
 </header>
@@ -81,6 +56,8 @@
 <article> 
 <router-outlet class="text-center"></router-outlet>
 </article>
+
+<app-messages></app-messages>
 
 <footer class="footer">
     <span class="text-muted">Place sticky footer content here.</span>
