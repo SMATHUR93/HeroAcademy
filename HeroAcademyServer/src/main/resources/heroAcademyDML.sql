@@ -1,13 +1,13 @@
 INSERT INTO `element` (`ID`,`BAD_AGAINST`,`COLOR`,`DESCRIPTION`,`GOOD_AGAINST`,`NAME`) 
 VALUES (1,'7,9,4,2','Red','FIRE','5,8,3,6','Fire'),
 (2,'5,8,3,6','Blue','WATER','1,7,9,4','Water'),
-(3,'6,1,7,9','Purple','WIND','4,2,5,8','Wind'),
-(4,'2,5,8,3','Orange','EARTH','6,1,7,9','Earth'),
+(3,'4,1,7,9','Purple','WIND','6,2,5,8','Wind'),
+(4,'2,5,8,9','Orange','EARTH','6,1,7,3','Earth'),
 (5,'8,3,6,1','Green','NATURE','7,9,4,2','Nature'),
-(6,'1,7,9,4','Yellow','ELECTRIC','2,5,8,3','Electric'),
+(6,'1,7,3,4','Yellow','ELECTRIC','2,5,8,9','Electric'),
 (7,'9,4,2,5','White','LIGHT','8,3,6,1','Light'),
 (8,'3,6,1,7','Black','DARK','9,4,2,5','Dark'),
-(9,'4,2,5,8','Grey','METAL','3,6,1,7','Metal');
+(9,'6,2,5,8','Grey','METAL','3,4,1,7','Metal');
 
 INSERT INTO `race` (`NAME`,`DESCRIPTION`) 
 VALUES ('Human','Humans'),
@@ -338,3 +338,45 @@ VALUES ('Super Strength','Super Strength')
  , ( 'Momentum Manipulation','Momentum Manipulation')
  , ( 'Space Manipulation','Space Manipulation')
  , ( 'Time Manipulation','Time Manipulation' );
+  
+INSERT INTO `heroacademy`.`user` (`ID`, `USER_NAME`,  `PASSWORD`, `FIRST_NAME`, `LAST_NAME`, `PRIMARY_EMAIL`, `SECONDARY_EMAIL`, `GENDER`, `DOB`, `HEIGHT`, `WEIGHT`, `STRENGTH`, `SPEED`,  `INTELLIGENCE`,  `WILLPOWER`, `STAMINA`, `COORDINATION`, `FORTITIUDE`, `DURABILLITY`)
+VALUES 
+('10000', 'smathur',  'root', 'SHREY', 'MATHUR', 'shreymathur93@gmail.com', 'shreymathur93@gmail.com', 'M', '1993-02-25', '1', '1',  '1', '1', '1', '1', '1', '1', '1', '1'),
+('10001', 'smathur1',  'root', 'SHREK', 'MARTELL', 'shreymathur93@gmail.com', 'shreymathur93@gmail.com', 'M', '1994-09-25', '1', '1',  '1', '1', '1', '1', '1', '1', '1', '1'),
+('10002', 'smathur2',  'root', 'SHREDDER', 'MAKO', 'shreymathur93@gmail.com', 'shreymathur93@gmail.com', 'M', '1996-12-25', '1', '1',  '1', '1', '1', '1', '1', '1', '1', '1'),
+('10003', 'smathur3',  'root', 'SHEIK', 'MAQBOOL', 'shreymathur93@gmail.com', 'shreymathur93@gmail.com', 'M', '1990-07-25', '1', '1',  '1', '1', '1', '1', '1', '1', '1', '1'),
+('10004', 'smathur3',  'root', 'SHREE', 'MATHURPAN', 'shreymathur93@gmail.com', 'shreymathur93@gmail.com', 'F', '1994-11-29', '1', '1',  '1', '1', '1', '1', '1', '1', '1', '1');
+
+INSERT INTO `heroacademy`.`element_mapping` (`element_ID`, `ID`) VALUES 
+('1', '10000'),
+('2', '10001'),
+('3', '10002'),
+('4', '10003'),
+('5', '10004');
+
+INSERT INTO `heroacademy`.`race_mapping` (`race_ID`, `ID`) VALUES 
+('1', '10000'),
+('2', '10001'),
+('3', '10002'),
+('4', '10003'),
+('5', '10004');
+
+INSERT INTO `heroacademy`.`symbol_mapping` (`symbol_ID`, `ID`) VALUES 
+('1', '10000'),
+('21', '10001'),
+('31', '10002'),
+('41', '10003'),
+('51', '10004');
+
+INSERT INTO `heroacademy`.`skill_mapping` (`user_ID`, `skill_ID`, `skill_level`) VALUES 
+('10000', '1', '10'),
+('10000', '4', '10'),
+('10001', '67', '10'),
+('10001', '12', '10'),
+('10002', '21', '10'),
+('10002', '90', '10'),
+('10003', '65', '10'),
+('10003', '92', '10'),
+('10004', '71', '10'),
+('10004', '34', '10');
+  

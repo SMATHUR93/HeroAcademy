@@ -17,11 +17,11 @@
 		<class>com.shrek.heroAcademy.model.Mission</class>
 		<class>com.shrek.heroAcademy.model.Race</class>
 		<class>com.shrek.heroAcademy.model.Skill</class>
-		<class>com.shrek.heroAcademy.model.SkillLevel</class>
+		<class>com.shrek.heroAcademy.model.SkillMapping</class>
 		<class>com.shrek.heroAcademy.model.Symbol</class>
 		<class>com.shrek.heroAcademy.model.Team</class>
 		<class>com.shrek.heroAcademy.model.User</class>
-		<class>com.shrek.heroAcademy.model.UserAddress</class>
+		<class>com.shrek.heroAcademy.model.UserAddressMapping</class>
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
 			<property name="hibernate.hbm2ddl.auto" value="update" />

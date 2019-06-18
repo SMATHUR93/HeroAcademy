@@ -2,6 +2,7 @@ create database heroAcademy;
 drop database heroAcademy;
 use heroAcademy;
 show tables;
+drop table skill_level;
 
 select * from course;
 select * from course_instructor;

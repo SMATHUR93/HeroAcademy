@@ -5,22 +5,27 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @SuppressWarnings("serial")
 @Entity
-@Table(name="USER_ADDRESS")
-public class UserAddress extends BaseEntity implements Serializable{
+@Table(name="USER_ADDRESS_MAPPING")
+public class UserAddressMapping extends BaseEntity implements Serializable{
 
-	@OneToOne
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "USER_ID", referencedColumnName = "ID")
-	private User userId;
+	@JsonIgnoreProperties("addresses")
+	private User user;
 	
 	@OneToOne
 	@JoinColumn(name = "LOCATION_ID", referencedColumnName = "ID")
-	private Location locationId;
+	private Location location;
 	
 	@Column(name="IS_CURRENT_ADDRESS", nullable=true)
 	private String isCurrentAddress;
@@ -31,20 +36,20 @@ public class UserAddress extends BaseEntity implements Serializable{
 	@Column(name="END_DATE", nullable=true)
 	private Date endDate;
 
-	public User getUserId() {
-		return userId;
+	public User getUser() {
+		return user;
 	}
 
-	public void setUserId(User userId) {
-		this.userId = userId;
+	public void setUserId(User user) {
+		this.user = user;
 	}
 
-	public Location getLocationId() {
-		return locationId;
+	public Location getLocation() {
+		return location;
 	}
 
-	public void setLocationId(Location locationId) {
-		this.locationId = locationId;
+	public void setLocation(Location location) {
+		this.location = location;
 	}
 
 	public String getIsCurrentAddress() {
@@ -71,14 +76,14 @@ public class UserAddress extends BaseEntity implements Serializable{
 		this.endDate = endDate;
 	}
 
-	public UserAddress() {
+	public UserAddressMapping() {
 		super();
 	}
 
-	public UserAddress(User userId, Location locationId, String isCurrentAddress, Date startDate, Date endDate) {
+	public UserAddressMapping(User user, Location location, String isCurrentAddress, Date startDate, Date endDate) {
 		super();
-		this.userId = userId;
-		this.locationId = locationId;
+		this.user = user;
+		this.location = location;
 		this.isCurrentAddress = isCurrentAddress;
 		this.startDate = startDate;
 		this.endDate = endDate;

@@ -2,12 +2,18 @@ package com.shrek.heroAcademy.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @SuppressWarnings("serial")
 @Entity
@@ -87,6 +93,14 @@ public class User extends BaseEntity implements Serializable{
 	@JoinTable(name="ELEMENT_MAPPING")
 	private Element element;
 
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy="user")
+	@JsonIgnoreProperties("user")
+	private List<SkillMapping> skills;
+	
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy="user")
+	@JsonIgnoreProperties("user")
+	private List<UserAddressMapping> addresses;
+	
 	public String getUserName() {
 		return userName;
 	}
@@ -190,14 +204,111 @@ public class User extends BaseEntity implements Serializable{
 	public void setElement(Element element) {
 		this.element = element;
 	}
+	
+	public List<SkillMapping> getSkills() {
+		return skills;
+	}
+	
+	public void setSkills(List<SkillMapping> skills) {
+		this.skills = skills;
+	}
+	
+	public List<UserAddressMapping> getAddresses() {
+		return addresses;
+	}
+
+	public void setAddresses(List<UserAddressMapping> addresses) {
+		this.addresses = addresses;
+	}
+
+	public Integer getHeight() {
+		return height;
+	}
+
+	public void setHeight(Integer height) {
+		this.height = height;
+	}
+
+	public Integer getWeight() {
+		return weight;
+	}
+
+	public void setWeight(Integer weight) {
+		this.weight = weight;
+	}
+
+	public Integer getStrength() {
+		return strength;
+	}
+
+	public void setStrength(Integer strength) {
+		this.strength = strength;
+	}
+
+	public Integer getSpeed() {
+		return speed;
+	}
+
+	public void setSpeed(Integer speed) {
+		this.speed = speed;
+	}
+
+	public Integer getIntelligence() {
+		return intelligence;
+	}
+
+	public void setIntelligence(Integer intelligence) {
+		this.intelligence = intelligence;
+	}
+
+	public Integer getStamina() {
+		return stamina;
+	}
+
+	public void setStamina(Integer stamina) {
+		this.stamina = stamina;
+	}
+
+	public Integer getWillpower() {
+		return willpower;
+	}
+
+	public void setWillpower(Integer willpower) {
+		this.willpower = willpower;
+	}
+
+	public Integer getFortitude() {
+		return fortitude;
+	}
+
+	public void setFortitude(Integer fortitude) {
+		this.fortitude = fortitude;
+	}
+
+	public Integer getDurabillity() {
+		return durabillity;
+	}
+
+	public void setDurabillity(Integer durabillity) {
+		this.durabillity = durabillity;
+	}
+
+	public Integer getCoordination() {
+		return coordination;
+	}
+
+	public void setCoordination(Integer coordination) {
+		this.coordination = coordination;
+	}
 
 	public User() {
 		super();
 	}
 
 	public User(String userName, String password, String firstName, String middleName, String lastName, Date dob,
-			String gender, String primaryEmail, String secondaryEmail, Equipment equipment, Race race, Symbol symbol,
-			Element element) {
+			String gender, String primaryEmail, String secondaryEmail, Integer height, Integer weight, Integer strength,
+			Integer speed, Integer intelligence, Integer stamina, Integer willpower, Integer fortitude,
+			Integer durabillity, Integer coordination) {
 		super();
 		this.userName = userName;
 		this.password = password;
@@ -208,10 +319,49 @@ public class User extends BaseEntity implements Serializable{
 		this.gender = gender;
 		this.primaryEmail = primaryEmail;
 		this.secondaryEmail = secondaryEmail;
+		this.height = height;
+		this.weight = weight;
+		this.strength = strength;
+		this.speed = speed;
+		this.intelligence = intelligence;
+		this.stamina = stamina;
+		this.willpower = willpower;
+		this.fortitude = fortitude;
+		this.durabillity = durabillity;
+		this.coordination = coordination;
+	}
+
+	public User(String userName, String password, String firstName, String middleName, String lastName, Date dob,
+			String gender, String primaryEmail, String secondaryEmail, Integer height, Integer weight, Integer strength,
+			Integer speed, Integer intelligence, Integer stamina, Integer willpower, Integer fortitude,
+			Integer durabillity, Integer coordination, Equipment equipment, Race race, Symbol symbol, Element element,
+			List<SkillMapping> skills, List<UserAddressMapping> addresses) {
+		super();
+		this.userName = userName;
+		this.password = password;
+		this.firstName = firstName;
+		this.middleName = middleName;
+		this.lastName = lastName;
+		this.dob = dob;
+		this.gender = gender;
+		this.primaryEmail = primaryEmail;
+		this.secondaryEmail = secondaryEmail;
+		this.height = height;
+		this.weight = weight;
+		this.strength = strength;
+		this.speed = speed;
+		this.intelligence = intelligence;
+		this.stamina = stamina;
+		this.willpower = willpower;
+		this.fortitude = fortitude;
+		this.durabillity = durabillity;
+		this.coordination = coordination;
 		this.equipment = equipment;
 		this.race = race;
 		this.symbol = symbol;
 		this.element = element;
+		this.skills = skills;
+		this.addresses = addresses;
 	}
 
 }
