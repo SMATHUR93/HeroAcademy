@@ -21,8 +21,18 @@ public class SkillMappingDaoImpl extends GenericDaoImpl<SkillMapping> implements
 	}
 	
 	@Transactional
-	public SkillMapping addSkill(SkillMapping SkillMapping){
+	public SkillMapping addSkillMapping(SkillMapping SkillMapping){
 		return (SkillMapping)create(SkillMapping);
+	}
+
+	@Transactional
+	public SkillMapping updateSkillMapping(SkillMapping skillMapping) {
+		return (SkillMapping) update(skillMapping);
+	}
+
+	@Transactional
+	public void deleteSkillMapping(SkillMapping skillMapping) {
+		delete(skillMapping.getId());
 	}
 
 }

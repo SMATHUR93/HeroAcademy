@@ -10,6 +10,10 @@ public interface IUserDao extends IGenericDao<User>  {
 	
 	public User getUser(Long id);
 	
-	public User addSkill(User user);
+	public User addUser(User user);
+	
+	public User updateUser(User user);
+	
+	public void deleteUser(User user);
 	
 }

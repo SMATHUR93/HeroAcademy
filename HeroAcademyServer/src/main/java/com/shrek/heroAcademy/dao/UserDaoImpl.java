@@ -2,23 +2,35 @@ package com.shrek.heroAcademy.dao;
 
 import java.util.List;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import com.shrek.heroAcademy.model.User;
 
 public class UserDaoImpl extends GenericDaoImpl<User>  implements IUserDao{
 
-	@Override
+	@Transactional
 	public List<User> getAllUsers() {
 		return (List<User>) findAll();
 	}
 
-	@Override
+	@Transactional
 	public User getUser(Long id) {
 		return (User) find(id);
 	}
 
-	@Override
-	public User addSkill(User user) {
-		return (User)create(user);
+	@Transactional
+	public User addUser(User user) {
+		return (User) create(user);
+	}
+
+	@Transactional
+	public User updateUser(User user) {
+		return (User) update(user);
+	}
+
+	@Transactional
+	public void deleteUser(User user) {
+		delete(user.getId());
 	}
 
 }

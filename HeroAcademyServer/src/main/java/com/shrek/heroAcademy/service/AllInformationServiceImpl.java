@@ -1,5 +1,6 @@
 package com.shrek.heroAcademy.service;
 
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,7 +55,25 @@ public class AllInformationServiceImpl implements IAllInformationService {
 	}
 	
 	@Transactional
+	public List<User> getAllUsersInformation() {
+		return userDao.getAllUsers();
+	}
+	
+	@Transactional
 	public List<SkillMapping> getSkillMappingData() {
 		return skillMappingDao.getAllSkillMappings();
+	}
+	
+	@Transactional
+	public boolean addUsers(List<User> users) {
+		Iterator<User> itr = users.iterator();
+		boolean out = true;
+		while(itr.hasNext()) {
+			User user = itr.next();
+			if(userDao.addUser(user)==null) {
+				out = false;
+			}
+		}
+		return out;
 	}
 }

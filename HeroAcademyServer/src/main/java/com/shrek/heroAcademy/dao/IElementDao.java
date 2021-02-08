@@ -12,4 +12,9 @@ public interface IElementDao extends IGenericDao<Element> {
 	public Element getElement(Long id);
 	
 	public Element addElement(Element element);
+	
+	public Element updateElement(Element element);
+	
+	public void deleteElement(Element element);
+	
 }

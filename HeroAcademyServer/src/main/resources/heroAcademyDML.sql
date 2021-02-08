@@ -1,14 +1,3 @@
-INSERT INTO `element` (`ID`,`BAD_AGAINST`,`COLOR`,`DESCRIPTION`,`GOOD_AGAINST`,`NAME`) 
-VALUES (1,'7,9,4,2','Red','FIRE','5,8,3,6','Fire'),
-(2,'5,8,3,6','Blue','WATER','1,7,9,4','Water'),
-(3,'4,1,7,9','Purple','WIND','6,2,5,8','Wind'),
-(4,'2,5,8,9','Orange','EARTH','6,1,7,3','Earth'),
-(5,'8,3,6,1','Green','NATURE','7,9,4,2','Nature'),
-(6,'1,7,3,4','Yellow','ELECTRIC','2,5,8,9','Electric'),
-(7,'9,4,2,5','White','LIGHT','8,3,6,1','Light'),
-(8,'3,6,1,7','Black','DARK','9,4,2,5','Dark'),
-(9,'6,2,5,8','Grey','METAL','3,4,1,7','Metal');
-
 INSERT INTO `race` (`NAME`,`DESCRIPTION`) 
 VALUES ('Human','Humans'),
 ('Elf','Elves'),
@@ -25,6 +14,17 @@ VALUES ('Human','Humans'),
 ('Demigod','Demigods'),
 ('Demon','Demons'),
 ('Angel','Angels');
+
+INSERT INTO `element` (`ID`,`BAD_AGAINST`,`COLOR`,`DESCRIPTION`,`GOOD_AGAINST`,`NAME`) 
+VALUES (1,'7,9,4,2','Red','FIRE','5,8,3,6','Fire'),
+(2,'5,8,3,6','Blue','WATER','1,7,9,4','Water'),
+(3,'4,1,7,9','Purple','WIND','6,2,5,8','Wind'),
+(4,'2,5,8,9','Orange','EARTH','6,1,7,3','Earth'),
+(5,'8,3,6,1','Green','NATURE','7,9,4,2','Nature'),
+(6,'1,7,3,4','Yellow','ELECTRIC','2,5,8,9','Electric'),
+(7,'9,4,2,5','White','LIGHT','8,3,6,1','Light'),
+(8,'3,6,1,7','Black','DARK','9,4,2,5','Dark'),
+(9,'6,2,5,8','Grey','METAL','3,4,1,7','Metal');
 
 INSERT INTO `symbol` (`NAME`,`DESCRIPTION`) 
 VALUES ('Lion','Lion'),

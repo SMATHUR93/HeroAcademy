@@ -12,4 +12,9 @@ public interface IRaceDao extends IGenericDao<Race> {
 	
 	public Race addRace(Race race);
 	
+	public Race updateRace(Race race);
+	
+	public void deleteRace(Race race);
+	
+	
 }

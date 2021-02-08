@@ -10,6 +10,10 @@ public interface ISkillMappingDao extends IGenericDao<SkillMapping> {
 	
 	public SkillMapping getSkillMapping(Long id);
 	
-	public SkillMapping addSkill(SkillMapping SkillMapping);
+	public SkillMapping addSkillMapping(SkillMapping SkillMapping);
+	
+	public SkillMapping updateSkillMapping(SkillMapping skillMapping);
+	
+	public void deleteSkillMapping(SkillMapping skillMapping);
 	
 }

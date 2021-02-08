@@ -1,5 +1,69 @@
-<html>
-<body>
-<h2>Hello Big Wide World!</h2>
-</body>
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+		<title>HERO ACADEMY SERVER LANDING PAGE</title>
+		<base href="."> 
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+
+		<!-- jQuery library -->
+		<!-- <script src="libs/jquery-3.3.1.min.js"></script> -->
+
+		<!-- Custom CSS styles file -->
+		<link rel="stylesheet" href="styles.css"  type="text/css" />
+		
+		<!-- app file -->
+		<script src="app.js"></script>
+
+	</head>
+	<body onload="init()">
+
+		<div class="sidenav">
+		  <h4><span>Filters</span></h4>
+		  <div>
+		  	<span>PRICE</span>
+		  	<select id="filterByPriceStartInput" onkeyup="filterByPrice()"></select>
+		  	<select id="filterByPriceEndInput" onkeyup="filterByPrice()"></select>
+		  </div>
+		  <div>
+		  	<span>BRAND</span>
+		  	<input type="text" id="filterByBrandInput" onkeyup="filterByBrand()" placeholder="Search for brands.." title="Type in a brand name">
+		  </div>
+		  <div>
+		  	<span>COLOR</span>
+		  	<table id="colorFilters"></table>
+		  </div>
+		</div>
+		
+		<div class="content">
+		  <h2 id="titleBox">Hero Academy List</h2>
+		  <div id="searchResultsCountDisplay">Showing n results for heroes</div>
+		  <div id="sortingOptionsDisplay">
+		  	<h5><span>Sort By</span></h5>
+		  	<span>Relevance</span>
+		  	<span><button onclick="sortTableAsc()">Price - Low to High </button></span>
+		  	<span><button onclick="sortTableDesc()">Price - High to Low </button></span>
+		  </div>
+		  <div id="productsListing">
+		  	<table id="productsListTable">
+		  		<tr>
+				    <th style="width:16%;">ID</th>
+				    <th style="width:16%;">USERNAME</th>
+				    <th style="width:16%;">IMAGE</th>
+				    <th style="width:16%;">GENDER</th>
+				    <th style="width:16%;">DATE OF BIRTH</th>
+				    <th style="width:16%;">EMAIL</th> 
+				</tr>
+		  	</table>
+		  </div>
+		</div>
+
+	    <footer class="footer">
+		    <span class="text-muted">&nbsp;&nbsp;Hero Academy Server version 1.0.0 June 2019.</span>
+		</footer>
+
+	</body>
 </html>

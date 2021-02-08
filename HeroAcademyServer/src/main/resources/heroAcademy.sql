@@ -2,7 +2,6 @@ create database heroAcademy;
 drop database heroAcademy;
 use heroAcademy;
 show tables;
-drop table skill_level;
 
 select * from course;
 select * from course_instructor;
@@ -23,6 +22,24 @@ select * from team;
 select * from user;
 select * from user_address;
 
+desc user;
+desc user_address;
+desc course;
+desc course_instructor;
+desc course_user;
+desc element;
+desc element_mapping;
+desc equipment;
+desc equipment_mapping;
+desc location;
+desc mission;
+desc team;
+desc race;
+desc race_mapping;
+desc skill;
+desc skill_mapping;
+desc symbol;
+desc symbol_mapping;
 
 SET FOREIGN_KEY_CHECKS = 0;
 SET SQL_SAFE_UPDATES = 0;

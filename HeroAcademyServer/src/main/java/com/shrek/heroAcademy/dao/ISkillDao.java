@@ -12,4 +12,8 @@ public interface ISkillDao extends IGenericDao<Skill> {
 	
 	public Skill addSkill(Skill skill);
 	
+	public Skill updateSkill(Skill skill);
+	
+	public void deleteSkill(Skill skill);
+	
 }

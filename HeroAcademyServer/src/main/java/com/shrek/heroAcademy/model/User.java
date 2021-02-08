@@ -23,6 +23,9 @@ public class User extends BaseEntity implements Serializable{
 	@Column(name = "USER_NAME", nullable = true)
 	private String userName;
 	
+	@Column(name = "IMAGE", nullable = true)
+	private String image;
+	
 	@Column(name = "PASSWORD", nullable = true)
 	private String password;
 	
@@ -107,6 +110,14 @@ public class User extends BaseEntity implements Serializable{
 
 	public void setUserName(String userName) {
 		this.userName = userName;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 	public String getPassword() {
@@ -305,12 +316,13 @@ public class User extends BaseEntity implements Serializable{
 		super();
 	}
 
-	public User(String userName, String password, String firstName, String middleName, String lastName, Date dob,
+	public User(String userName, String image, String password, String firstName, String middleName, String lastName, Date dob,
 			String gender, String primaryEmail, String secondaryEmail, Integer height, Integer weight, Integer strength,
 			Integer speed, Integer intelligence, Integer stamina, Integer willpower, Integer fortitude,
 			Integer durabillity, Integer coordination) {
 		super();
 		this.userName = userName;
+		this.image = image;
 		this.password = password;
 		this.firstName = firstName;
 		this.middleName = middleName;
@@ -331,13 +343,14 @@ public class User extends BaseEntity implements Serializable{
 		this.coordination = coordination;
 	}
 
-	public User(String userName, String password, String firstName, String middleName, String lastName, Date dob,
+	public User(String userName, String image, String password, String firstName, String middleName, String lastName, Date dob,
 			String gender, String primaryEmail, String secondaryEmail, Integer height, Integer weight, Integer strength,
 			Integer speed, Integer intelligence, Integer stamina, Integer willpower, Integer fortitude,
 			Integer durabillity, Integer coordination, Equipment equipment, Race race, Symbol symbol, Element element,
 			List<SkillMapping> skills, List<UserAddressMapping> addresses) {
 		super();
 		this.userName = userName;
+		this.image = image;
 		this.password = password;
 		this.firstName = firstName;
 		this.middleName = middleName;
@@ -362,6 +375,42 @@ public class User extends BaseEntity implements Serializable{
 		this.element = element;
 		this.skills = skills;
 		this.addresses = addresses;
+	}
+
+	@Override
+	public String toString() {
+//      System.out.println(image);
+//      System.out.println(firstName);
+//      System.out.println(middleName);
+//      System.out.println(lastName);
+//      System.out.println(userName);
+//      System.out.println(password);
+//      System.out.println(primaryEmail);
+//      System.out.println(secondaryEmail);
+//      System.out.println(gender);
+//      System.out.println(dob);
+//      System.out.println(height);
+//      System.out.println(weight);
+//      System.out.println(strength);
+//      System.out.println(speed);
+//      System.out.println(intelligence);
+//      System.out.println(stamina);
+//      System.out.println(willpower);
+//      System.out.println(fortitude);
+//      System.out.println(durabillity);
+//      System.out.println(coordination);
+//      System.out.println(race);
+//      System.out.println(symbol);
+//      System.out.println(element);
+//      System.out.println(skillsList);
+		return "User [userName=" + userName + ", image=" + image + ", password=" + password + ", firstName=" + firstName
+				+ ", middleName=" + middleName + ", lastName=" + lastName + ", dob=" + dob + ", gender=" + gender
+				+ ", primaryEmail=" + primaryEmail + ", secondaryEmail=" + secondaryEmail + ", height=" + height
+				+ ", weight=" + weight + ", strength=" + strength + ", speed=" + speed + ", intelligence="
+				+ intelligence + ", stamina=" + stamina + ", willpower=" + willpower + ", fortitude=" + fortitude
+				+ ", durabillity=" + durabillity + ", coordination=" + coordination + ", equipment=" + equipment
+				+ ", race=" + race + ", symbol=" + symbol + ", element=" + element + ", skills=" + skills
+				+ ", addresses=" + addresses + "]";
 	}
 
 }
